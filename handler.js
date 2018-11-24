@@ -15,7 +15,7 @@ module.exports.postcontactform = async (event) => {
 
       const params = {
           Message: "From: " + parsedBody.senderName + " (" + parsedBody.senderEmail + ")" + "\n\n" + parsedBody.emailBody,
-          Subject: 'Email from personal website contact form',
+          Subject: 'Email received from personal website contact form',
           TopicArn: process.env.snsTopic
       };
 

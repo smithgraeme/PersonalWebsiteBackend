@@ -24,14 +24,14 @@ functions:
     environment:
      snsTopic: arn:aws:sns:us-east-1:495054376788:personalWebsiteContactPage
 
-plugins:
-  - serverless-domain-manager
-
-custom:
-  customDomain:
-    domainName: apiv2.graemesmith.info
-    certificateName: '*.graemesmith.info'
-    basePath: ''
-    stage: ${self:provider.stage}
-    createRoute53Record: true
-    endpointType: regional
+# plugins:
+#   - serverless-domain-manager
+#
+# custom:
+#   customDomain:
+#     domainName: apiv2.graemesmith.info
+#     certificateName: '*.graemesmith.info'
+#     basePath: ''
+#     stage: ${self:provider.stage}
+#     createRoute53Record: true
+#     endpointType: regional

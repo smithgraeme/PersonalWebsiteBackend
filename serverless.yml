@@ -1,0 +1,37 @@
+service:
+  name: PersonalWebsiteV2Backend
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  memorySize: 128
+  timeout: 3
+  endpointType: regional
+  # apiName: ${self:service.name}
+
+  iamRoleStatements:
+   - Effect: "Allow"
+     Action:
+       - "sns:Publish"
+     Resource: arn:aws:sns:us-east-1:495054376788:personalWebsiteContactPage
+
+functions:
+  postcontactform:
+    handler: handler.postcontactform
+    events:
+     - http: post postcontactform
+
+    environment:
+     snsTopic: arn:aws:sns:us-east-1:495054376788:personalWebsiteContactPage
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: apiv2.graemesmith.info
+    certificateName: '*.graemesmith.info'
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    endpointType: regional

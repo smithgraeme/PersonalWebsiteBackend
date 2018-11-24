@@ -9,4 +9,4 @@ phases:
   build:
     commands:
       - echo ${DeployStage}
-      - serverless deploy --stage prod
+      - serverless deploy --stage ${DeployStage}

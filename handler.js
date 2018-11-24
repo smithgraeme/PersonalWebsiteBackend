@@ -5,8 +5,6 @@ const querystring = require('querystring');
 
 module.exports.postcontactform = async (event) => {
   console.log(event);
-  // console.log(JSON.stringify(event));
-  //console.log(event.body);
 
   const parsedBody = querystring.parse(event.body);
 

@@ -8,4 +8,5 @@ phases:
       - npm install serverless-domain-manager --save-dev
   build:
     commands:
-      - serverless deploy --stage ${DeployStage}
+      - echo ${DeployStage}
+      - serverless deploy --stage prod

@@ -7,13 +7,17 @@ provider:
   memorySize: 128
   timeout: 3
   endpointType: regional
-  # apiName: ${self:service.name}
 
   iamRoleStatements:
    - Effect: "Allow"
      Action:
        - "sns:Publish"
      Resource: arn:aws:sns:us-east-1:495054376788:personalWebsiteContactPage
+   - Effect: "Allow"
+     Action:
+       - "s3:Get*"
+       - "s3:List*"
+     Resource: "*"
 
 functions:
   postcontactform:
@@ -23,6 +27,11 @@ functions:
 
     environment:
      snsTopic: arn:aws:sns:us-east-1:495054376788:personalWebsiteContactPage
+
+  getRandomFunPicture:
+    handler: getRandomFunPicture.handler
+    events:
+     - http: get getRandomFunPicture
 
 # plugins:
 #   - serverless-domain-manager

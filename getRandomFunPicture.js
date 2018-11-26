@@ -13,7 +13,7 @@ exports.handler = async function(event, context, callback) {
     const imagesArray = result.Contents;
 
     const count = imagesArray.length;
-    console.log("Image count: " + count);
+    console.log("Image Count: " + count);
 
     const index = getRandomInt(0, count);
     console.log("Index: " + index);
@@ -23,7 +23,7 @@ exports.handler = async function(event, context, callback) {
 
     const url = s3.getSignedUrl('getObject', { Bucket: bucket, Key: chosenPictureKey });
 
-    console.log('The URL is', url);
+    console.log('Presigned Access URL is', url);
 
     callback(null, {
         statusCode: '302',

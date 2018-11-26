@@ -3,7 +3,6 @@ phases:
   install:
     commands:
       - ls -al
-      - aws s3 sync . s3://${codeStorageBucket}
       - echo Installing dependencies...
       - npm install
       - npm install -g serverless

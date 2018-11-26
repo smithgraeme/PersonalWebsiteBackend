@@ -13,10 +13,10 @@ exports.handler = async function(event, context, callback) {
     const imagesArray = result.Contents;
 
     const count = imagesArray.length;
-    console.log(count);
+    console.log("Image count: " + count);
 
     const index = getRandomInt(0, count);
-    console.log(index);
+    console.log("Index: " + index);
 
     const chosenPictureKey = imagesArray[index].Key;
     console.log(chosenPictureKey);

@@ -29,7 +29,8 @@ exports.handler = async function(event, context, callback) {
         statusCode: '302',
         headers: {
             'Content-Type': 'application/json',
-            'Location': url
+            'Location': url,
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
         },
     });
 };

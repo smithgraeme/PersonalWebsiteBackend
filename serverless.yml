@@ -32,15 +32,3 @@ functions:
     handler: getRandomFunPicture.handler
     events:
      - http: get getRandomFunPicture
-
-# plugins:
-#   - serverless-domain-manager
-#
-# custom:
-#   customDomain:
-#     domainName: apiv2.graemesmith.info
-#     certificateName: '*.graemesmith.info'
-#     basePath: ''
-#     stage: ${self:provider.stage}
-#     createRoute53Record: true
-#     endpointType: regional
